@@ -14,6 +14,7 @@ Commit hash: 3f6b254
 - Understood the overall idea of LittleFS, not really confident about implementation yet
 - For flash, will we be using a partition table or will partition be hardcoded?
 - Partition for each of the formats on flash is to be discussed
+- What exactly is nv kv? Does it refer to records?
 
 ## Next week
 - See `weeks/week2/README.md`
