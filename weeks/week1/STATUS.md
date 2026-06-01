@@ -1,21 +1,25 @@
-# Week 1 Status — <YYYY-MM-DD to YYYY-MM-DD>
-
-> Template — fill in during the week, finalise on Friday before demo.
+# Week 1 Status — 2026-05-25 to 2026-05-29
 
 ## Shipped
-- <committed work with commit hashes>
+Created a 1 page diagram showing:
+- How srv_phb_add_contact() flows down to storage today
+- The three formats (RECORD / FILE / BINARY) and the four devices (FLASH / SIM1 / SIM2 / SD)
+- Where the flash backend will plug in <br><br>
+Commit hash: 3f6b254
 
 ## Slipped
-- <anything planned but not done — why, and new ETA>
+- None
 
 ## Blockers
-- <things you need help with>
+- Understood the overall idea of LittleFS, not really confident about implementation yet
+- For flash, will we be using a partition table or will partition be hardcoded?
+- Partition for each of the formats on flash is to be discussed
 
 ## Next week
 - See `weeks/week2/README.md`
 
 ## Demo (Friday)
-- <one-line description of what was shown>
+Flow of srv_phb_add_contact() down to SDL and HW flash.
 
 ## Notes for mentor
-- <anything else worth flagging>
+- NOR flash part number: GD25Q64 or W25Q64 (both are identical)
