@@ -14,25 +14,25 @@ Before changing anything, build a working mental model of:
 ## Punch list
 
 ### Get the dev environment running (all via Docker — do NOT install SDL2 / cmake on host)
-- [ ] Install Docker + docker-compose on your machine
-- [ ] `cd refs/osmocom-demo/osmo-mmi`
-- [ ] `./osmo-mmi-demo.sh build` — builds the Docker image (Ubuntu 22.04 + SDL2 + toolchain) and compiles the SDL target
-- [ ] `./osmo-mmi-demo.sh run` — launches `featurephone-ui` (X11 forwarded; use `vnc` subcommand if headless)
-- [ ] `./osmo-mmi-demo.sh shell` — opens an interactive shell inside the build container if you need to poke around
-- [ ] Open Phonebook → add a contact; open Messages; change a setting in Settings
-- [ ] Inspect `data/<instance>/` in the osmo-mmi directory (bind-mounted from container's `/workspace/data/`) — see how POSIX-file storage looks today
+- [x] Install Docker + docker-compose on your machine
+- [x] `cd refs/osmocom-demo/osmo-mmi`
+- [x] `./osmo-mmi-demo.sh build` — builds the Docker image (Ubuntu 22.04 + SDL2 + toolchain) and compiles the SDL target
+- [x] `./osmo-mmi-demo.sh run` — launches `featurephone-ui` (X11 forwarded; use `vnc` subcommand if headless)
+- [x] `./osmo-mmi-demo.sh shell` — opens an interactive shell inside the build container if you need to poke around
+- [x] Open Phonebook → add a contact; open Messages; change a setting in Settings
+- [x] Inspect `data/<instance>/` in the osmo-mmi directory (bind-mounted from container's `/workspace/data/`) — see how POSIX-file storage looks today
 
 ### Required reading (in order)
-- [ ] `services/storage/StorageSvc.h` — the API contract you will implement against (227 lines)
-- [ ] `services/storage/StorageSvc.c` — current SDL POSIX-file implementation (454 lines)
-- [ ] `services/CLAUDE.md` — service threading rules (read twice; this matters in Week 7)
-- [ ] `services/framework/sfw.h` + `sfw_lifecycle.c` — how services register and initialise
-- [ ] `services/phb/PhbService.c` — find `phb_load_contacts` and `phb_save_contact` (the stubs you will wire up in Week 7)
-- [ ] `refs/SS2000_Memory_Arch_v7_1.pptx` slides 2, 4, 11, 12 — flash budget context
-- [ ] [LittleFS DESIGN.md](https://github.com/littlefs-project/littlefs/blob/master/DESIGN.md) — failure-mode awareness (we are *not* using LittleFS, but its design rationale informs ours)
+- [x] `services/storage/StorageSvc.h` — the API contract you will implement against (227 lines)
+- [x] `services/storage/StorageSvc.c` — current SDL POSIX-file implementation (454 lines)
+- [x] `services/CLAUDE.md` — service threading rules (read twice; this matters in Week 7)
+- [x] `services/framework/sfw.h` + `sfw_lifecycle.c` — how services register and initialise
+- [x] `services/phb/PhbService.c` — find `phb_load_contacts` and `phb_save_contact` (the stubs you will wire up in Week 7)
+- [x] `refs/SS2000_Memory_Arch_v7_1.pptx` slides 2, 4, 11, 12 — flash budget context
+- [x] [LittleFS DESIGN.md](https://github.com/littlefs-project/littlefs/blob/master/DESIGN.md) — failure-mode awareness (we are *not* using LittleFS, but its design rationale informs ours)
 
 ### Deliverable
-- [ ] Create `docs/storage_arch.md` with a one-page diagram showing:
+- [x] Create `docs/storage_arch.md` with a one-page diagram showing:
   - How `srv_phb_add_contact()` flows down to storage today
   - The three formats (RECORD / FILE / BINARY) and the four devices (FLASH / SIM1 / SIM2 / SD)
   - Where the flash backend will plug in
